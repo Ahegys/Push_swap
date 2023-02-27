@@ -1,27 +1,21 @@
-# Nome do executável
 NAME = push_swap
 
-# Diretórios
 SRCDIR = source
 INCDIR = header
 OBJDIR = objs
 
-# Flags de compilação
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -O3
-LDFLAGS = 
 
-# Arquivos fonte e objetos
+
 SRC = $(wildcard $(SRCDIR)/*.c)
 OBJ = $(patsubst $(SRCDIR)/%.c,$(OBJDIR)/%.o,$(SRC))
 
-# Regras
-.PHONY: all clean fclean
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(LDFLAGS) $^ -o $@
+$(NAME):$(OBJ)
+	$(CC) $^ -o $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c | $(OBJDIR)
 	$(CC) $(CFLAGS) -I $(INCDIR) -c $< -o $@
@@ -30,12 +24,17 @@ $(OBJDIR):
 	mkdir $(OBJDIR)
 
 clean:
-	rm -f $(OBJ)
+	rm -rf objs
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
-# Dependências
+re:fclean all
+
 $(OBJ): | $(OBJDIR)
 
+ccs:
+	clear
+	@echo "\033[0;107m\033[1;90m ++++++++++++++++++++++++++++++++++++++++++++++++ \033[0m"
 
+.PHONY: all clean fclean

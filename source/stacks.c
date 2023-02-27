@@ -1,31 +1,42 @@
 #include "push_swap.h"
 
-void	stack_a(int *nbr)
+int	* stack_a(int size, int * nbr)
 {
+	t_func  make;
+
+	make = init();
 	int * stack;
 	int	i;
 
 	i = 0;
-	stack = (int *)ft_calloc(sizeof(int *));
+	stack = (int *)ft_calloc(size, sizeof(int));
 	
 	while (nbr[i])
 	{
 		stack[i] = nbr[i];
+		printf("%i\n", nbr[i]);
 		i++;
 	}
+	make.sa(stack);
+	return (stack);
 }
 
-void	stack_b(int *nbr)
+	int * stack_b(int size, int * nbr)
 {
+	t_func make;
+
+	make = init();
 	int * stack;
 	int	i;
 
 	i = 0;
-	stack = (int *)ft_calloc(sizeof(int *));
+	stack = (int *)ft_calloc(size, sizeof(int));
 	
-	while (nbr[i])
+	while (stack[i])
 	{
-		stack[i] = str[i];
+		stack[i] = nbr[i];
 		i++;
 	}
+	make.sa(stack);
+	return (stack);
 }
