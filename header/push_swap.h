@@ -24,6 +24,9 @@ void	swap_pb(int * swap);
 void	swap_rra(int * swap);
 void	swap_rrb(int * swap);
 void	swap_rrr(int * swap);
+void	one_hundred();
+void	five_hundred();
+void	exec_selection(int counter);
 int *	stack_a(int size, int * nbr);
 int *	stack_b(int size, int * nbr);
 

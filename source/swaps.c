@@ -1,9 +1,14 @@
 #include "push_swap.h"
 
-void	swap_sa(int * swap)
+void  swap_sa(int * swap)
 {
-    printf("%i\n", *swap);
-    write(1, "sa\n", 3);
+    int temp;
+
+    temp = swap[0];
+    swap[0] = swap[1];
+    swap[1] = swap[0];
+    ft_printf("sa\n");
+    ft_printf("%i\n", *swap);
 }
 
 void	swap_sb(int * swap)

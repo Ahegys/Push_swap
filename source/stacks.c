@@ -14,14 +14,14 @@ int	* stack_a(int size, int * nbr)
 	while (nbr[i])
 	{
 		stack[i] = nbr[i];
-		printf("%i\n", nbr[i]);
+		ft_printf("%i\n", nbr[i]);
 		i++;
 	}
 	make.sa(stack);
 	return (stack);
 }
 
-	int * stack_b(int size, int * nbr)
+int * stack_b(int size, int * nbr)
 {
 	t_func make;
 
