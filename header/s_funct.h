@@ -1,12 +1,12 @@
 #ifndef S_FUNCT_H
 #define S_FUNCT_H
-
+//
 typedef struct l_func
 {
-    void    (*sa)(int *);
-    void    (*sb)(int *);
-    void    (*ss)(int *);
-    void    (*ra)(int *);
+    int    *(*sa)(int *);
+    int    *(*sb)(int *);
+	int		*(*ss)(int *, int *);
+	void    (*ra)(int *);
     void    (*rb)(int *);
     void    (*rr)(int *);
     void    (*pa)(int *);

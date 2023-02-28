@@ -1,28 +1,33 @@
 #include "push_swap.h"
 
-void  swap_sa(int * swap)
+int *swap_sa(int *swap)
 {
     int temp;
 
     temp = swap[0];
     swap[0] = swap[1];
-    swap[1] = swap[0];
-    ft_printf("sa\n");
-    ft_printf("%i\n", *swap);
+    swap[1] = temp;
+	while (*swap)
+		ft_printf("%i", *(swap++));
+	return (swap);
 }
 
-void	swap_sb(int * swap)
+int *swap_sb(int *swap)
 {
-    printf("%i\n", *swap);
-    write(1, "sb\n", 3);
+    int temp;
+
+	temp = swap[0];
+	swap[0] = swap[1];
+	swap[1] = temp;
+    return (swap);
 }
 
-void	swap_ss(int * swap)
+int	*swap_ss(int * swap_a, int * swap_b)
 {
-    printf("%i\n", *swap);
-    write(1, "ss\n", 3);
+	ft_printf("%i", *swap_b);
+	write(1, "ss\n", 3);
+	return (swap_a);
 }
-
 void	swap_ra(int * swap)
 {
     printf("%i\n", *swap);

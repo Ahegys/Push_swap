@@ -1,43 +1,45 @@
 #include "push_swap.h"
 
-void	two_numbers()
+int	two_numbers()
 {
-	ft_printf("two numbers\n");
+	return (ft_printf("two numbers\n"));
 }
-void	three_numbers()
+int	three_numbers()
 {
-	ft_printf("three numbers\n");
+	return ft_printf("three numbers\n");
 }
-void	four_numbers()
+int	four_numbers()
 {
-	ft_printf("four numbers\n");
+	return ft_printf("four numbers\n");
 }
-void	five_numbers()
+int	five_numbers()
 {
-	ft_printf("five numbers\n");
-}
-
-void	one_hundred()
-{
-	ft_printf("one hundred\n");
-}
-void	five_hundred()
-{
-	ft_printf("five hundred\n");
+	return ft_printf("five numbers\n");
 }
 
-void	exec_selection(int counter)
+int	one_hundred()
+{
+	return ft_printf("one hundred\n");
+}
+int	five_hundred()
+{
+	return ft_printf("five hundred\n");
+}
+
+int	(*exec_selection(int counter))()
 {
 	if (counter == 2)
-		two_numbers();
+		return (two_numbers);
 	else if (counter == 3)
-		three_numbers();
+		return (three_numbers);
 	else if (counter == 4)
-		four_numbers();
+		return (four_numbers);
 	else if (counter == 5)
-		five_numbers();
+		return (five_numbers);
 	else if (counter == 100)
-		one_hundred();
+		return (one_hundred);
 	else if (counter == 500)
-		five_hundred();
+		return (five_hundred);
+	else
+		return (five_hundred);
 }

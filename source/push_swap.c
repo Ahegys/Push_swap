@@ -6,8 +6,9 @@ int main(int ac, char * av[])
     int i;
     int counter;
 	int * stack;
-	t_container	content;
+    int j;
 
+    j = 0;
     i = 1;
     counter = 1;
     if (ac < 3)
@@ -17,9 +18,10 @@ int main(int ac, char * av[])
 	stack = (int *)ft_calloc(counter, sizeof(int));
     while (av[i])
     {
-		stack[i - 1] = ft_atoi(av[i]);
+		stack[j] = ft_atoi(av[i]);
+        j++;
         i++;
     }
-	content.container_a = stack_a(counter, stack);
+    stack_a(i, stack);
     return (0);
 }

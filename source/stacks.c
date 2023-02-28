@@ -14,7 +14,6 @@ int	* stack_a(int size, int * nbr)
 	while (nbr[i])
 	{
 		stack[i] = nbr[i];
-		ft_printf("%i\n", nbr[i]);
 		i++;
 	}
 	make.sa(stack);
