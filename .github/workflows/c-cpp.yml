@@ -1,16 +1,22 @@
-name: C/C++ CI
+name: CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - run: make
-    - run: ./push_swap 1 2 3 4 5
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build
+      run: make
+
+    - name: Test
+      run: |
+        ./push_swap
