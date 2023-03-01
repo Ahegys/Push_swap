@@ -19,4 +19,4 @@ jobs:
 
     - name: Test
       run: |
-        ./push_swap
+        ./push_swap 1 2 3 4 5
