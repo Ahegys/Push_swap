@@ -9,8 +9,8 @@ int * swap_ra(t_container * stack)
 	while (stack->stack_a[i])
 		i++;
 	temp = stack->stack_a[0];
-	stack->stack_a[0] = stack->stack_a[i - 1];
-	stack->stack_a[i - 1] = temp;
+	stack->stack_a[0] = stack->stack_a[i];
+	stack->stack_a[i] = temp;
 	return (stack->stack_a);
 }
 
@@ -18,19 +18,19 @@ int * swap_rb(t_container * stack)
 {
 	int i;
 	int temp;
-	int j = 0;
 
 	i = 0;
 	while (stack->stack_b[i])
 		i++;
 	temp = stack->stack_b[0];
-	stack->stack_b[0] = stack->stack_b[i - 1];
-	stack->stack_b[i - 1] = temp;
-	ft_printf("stack test\n");
-	while (stack->stack_b[j])
-	{
-		ft_printf("%i\n",stack->stack_b[j]);
-		j++;
-	}
+	stack->stack_b[0] = stack->stack_b[i];
+	stack->stack_b[i] = temp;
 	return (stack->stack_b);
+}
+
+t_container * swap_rr(t_container * stack)
+{
+	stack->stack_a = swap_ra(stack);
+	stack->stack_b = swap_rb(stack);
+	return (stack);
 }
