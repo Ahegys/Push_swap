@@ -18,10 +18,10 @@ int main(int ac, char * av[])
 	while (av[i])
 	{
 		stack.stack_a[j] = ft_atoi(av[i]);
-		stack.stack_b[j] = ft_atoi(av[i]);
 		j++;
 		i++;
 	}
-	stack = *swap_rr(&stack);
+	swap_sa(&stack);
+	ft_printf("OK\n");
 	return (0);
 }
