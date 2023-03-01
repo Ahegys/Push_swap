@@ -13,4 +13,5 @@
 #define ft_atoi atoi
 
 int	* swap_sa(t_container * stack);
+int	* swap_sb(t_container * stack);
 #endif

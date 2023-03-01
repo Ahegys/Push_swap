@@ -17,12 +17,12 @@ int main(int ac, char * av[])
 	i = 1;
 	while (av[i])
 	{
-		stack.stack_a[j] = ft_atoi(av[i]);
+		stack.stack_b[j] = ft_atoi(av[i]);
 		j++;
 		i++;
 	}
-	ft_printf("view stack values is swap stack_a [%i] [%i]\n",stack.stack_a[0], stack.stack_a[1]);
-	stack.stack_a = swap_sa(&stack);
-	ft_printf("view stack values is swap stack_a [%i] [%i]\n",stack.stack_a[0], stack.stack_a[1]);
+	ft_printf("view stack values is swap stack_a [%i] [%i]\n",stack.stack_b[0], stack.stack_b[1]);
+	stack.stack_b = swap_sb(&stack);
+	ft_printf("view stack values is swap stack_a [%i] [%i]\n",stack.stack_b[0], stack.stack_b[1]);
 	return (0);
 }
