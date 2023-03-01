@@ -3,8 +3,8 @@
 
 typedef struct l_container
 {
-	int	* container_a;
-	int * container_b;
+	int	* stack_a;
+	int * stack_b;
 }				t_container;
 
 #endif
