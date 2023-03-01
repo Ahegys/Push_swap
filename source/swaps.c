@@ -19,3 +19,10 @@ int	* swap_sb(t_container * stack)
 	stack->stack_b[1] = temp;
 	return (stack->stack_b);
 }
+
+t_container * swap_ss(t_container * stack)
+{
+	swap_sa(stack);
+	swap_sb(stack);
+	return (stack);
+}
