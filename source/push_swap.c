@@ -21,5 +21,6 @@ int main(int ac, char * av[])
 		j++;
 		i++;
 	}
+	swap_rb(&stack);
 	return (0);
 }
