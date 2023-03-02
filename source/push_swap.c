@@ -21,7 +21,7 @@ int main(int ac, char * av[])
 		j++;
 		i++;
 	}
-	swap_sa(&stack);
+	swap_rra(&stack);
 	ft_printf("OK\n");
 	return (0);
 }

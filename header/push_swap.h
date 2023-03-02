@@ -16,6 +16,7 @@ int	* swap_sa(t_container * stack);
 int	* swap_sb(t_container * stack);
 int * swap_ra(t_container * stack);
 int * swap_rb(t_container * stack);
+int * swap_rra(t_container * stack);
 t_container * swap_ss(t_container * stack);
 t_container * swap_rr(t_container * stack);
 #endif
