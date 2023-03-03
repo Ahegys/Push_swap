@@ -2,33 +2,21 @@
 
 int * swap_rra(t_container * stack)
 {
+	int index;
+	int size;
 	int * get_stack;
-	int i;
-	int j;
-	int temp;
 
-	i = 0;
-	j = 0;
-	while (stack->stack_a[i])
-		i++;
-	get_stack = ft_calloc(i, sizeof(int *));
-	while (stack->stack_a[j])
+	size = 0;
+	while(stack->stack_a[size])
+		size++;
+	get_stack = ft_calloc(size, sizeof(int *));
+	size = size - 1;
+	index = 1;
+	while (index <= size)
 	{
-		temp = stack->stack_a[j];
-		if (j == 1)
-		{
-			get_stack[j] = stack->stack_a[i - 1];
-			get_stack[i] = temp;
-		}
-		else
-			get_stack[j] = stack->stack_a[j];
-		j++;
+		get_stack[index] = stack->stack_a[index - 1];
+		index++;
 	}
-	j = 0;
-	while (get_stack[j])
-	{
-		ft_printf("%i\n", get_stack[j]);
-		j++;
-	}
+	get_stack[0] = stack->stack_a[size];
 	return (get_stack);
 }
