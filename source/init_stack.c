@@ -15,6 +15,7 @@ t_container * init_stack(t_container * stack, char * args[])
 	while (args[i])
 	{
 		stack->stack_a[j] = ft_atoi(args[i]);
+		stack->stack_b[j] = ft_atoi(args[i]);
 		j++;
 		i++;
 	}
