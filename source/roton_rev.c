@@ -41,3 +41,10 @@ int * swap_rrb(t_container * stack)
 	get_stack[0] = stack->stack_b[size];
 	return (get_stack);
 }
+
+t_container * swap_rrr(t_container * stack)
+{
+	stack->stack_a = swap_rra(stack);
+	stack->stack_b = swap_rrb(stack);
+	return (stack);
+}

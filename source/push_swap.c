@@ -2,26 +2,18 @@
 
 int main(int ac, char * av[])
 {
-	int i;
-	int j;
 	t_container stack;
-	
-	j = 0;
+	int i;
+
+	i = 0;
 	if (ac < 3)
 		return (ft_printf("\n"));
-	i = 1;
-	while (av[i])
-		i++;
-	stack.stack_a = ft_calloc(j, sizeof(int *));
-	stack.stack_b = ft_calloc(j, sizeof(int *));
-	i = 1;
-	while (av[i])
+	stack = *init_stack(&stack, av);
+	while (stack.stack_a[i])
 	{
-		stack.stack_a[j] = ft_atoi(av[i]);
-		j++;
+		ft_printf("[%i]",stack.stack_a[i]);
 		i++;
 	}
-	swap_rra(&stack);
-	ft_printf("OK\n");
+	ft_printf("\nOK\n");
 	return (0);
 }
