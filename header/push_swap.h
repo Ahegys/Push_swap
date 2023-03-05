@@ -14,6 +14,7 @@
 
 int * fill_in(int i);
 int arg_size(char * arg[]);
+int stack_size(int * stack);
 int	* swap_sa(t_container * stack);
 int	* swap_sb(t_container * stack);
 int * swap_ra(t_container * stack);

@@ -7,7 +7,7 @@ int main(int ac, char * av[])
 	if (ac < 3)
 		return (ft_printf("\n"));
 	stack = *init_stack(&stack, av);
-	stack = *swap_rr(&stack);
-	ft_printf("OK\n");
+	stack = *swap_pa(&stack);
+	ft_printf("\nOK\n");
 	return (0);
 }

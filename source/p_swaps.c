@@ -7,10 +7,7 @@ t_container * swap_pa(t_container * stack)
 	int * cont_b;
 	int j;
 
-	i = 0;
-	while (stack->stack_a[i])
-		i++;
-	cont_a = ft_calloc(i + 2, sizeof(int *));
+	cont_a = ft_calloc(stack_size(stack->stack_a) + 2, sizeof(int *));
 	cont_a[0] = stack->stack_b[0];
 	j = 0;
 	i = 1;
@@ -20,10 +17,7 @@ t_container * swap_pa(t_container * stack)
 		j++;
 		i++;
 	}
-	i = 0;
-	while (stack->stack_b[i])
-		i++;
-	cont_b = ft_calloc(i - 1, sizeof(int *));
+	cont_b = ft_calloc(stack_size(stack->stack_b) - 1, sizeof(int *));
 	i = 1;
 	j = 0;
 	while (stack->stack_b[i])
@@ -44,10 +38,7 @@ t_container * swap_pb(t_container * stack)
 	int * cont_b;
 	int j;
 
-	i = 0;
-	while (stack->stack_b[i])
-		i++;
-	cont_b = ft_calloc(i + 2, sizeof(int *));
+	cont_b = ft_calloc(stack_size(stack->stack_b) + 2, sizeof(int *));
 	cont_b[0] = stack->stack_a[0];
 	j = 0;
 	i = 1;
@@ -57,10 +48,7 @@ t_container * swap_pb(t_container * stack)
 		j++;
 		i++;
 	}
-	i = 0;
-	while (stack->stack_b[i])
-		i++;
-	cont_a = ft_calloc(i - 1, sizeof(int *));
+	cont_a = ft_calloc(stack_size(stack->stack_a) - 1, sizeof(int *));
 	i = 1;
 	j = 0;
 	while (stack->stack_a[i])

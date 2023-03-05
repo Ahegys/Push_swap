@@ -1,16 +1,23 @@
 #include "push_swap.h"
 
+int stack_size(int * stack)
+{
+	int i;
+	
+	i = 0;
+	while (stack[i])
+		i++;
+	return (i);
+}
+
 int * swap_rra(t_container * stack)
 {
 	int index;
 	int size;
 	int * get_stack;
 
-	size = 0;
-	while(stack->stack_a[size])
-		size++;
-	get_stack = ft_calloc(size, sizeof(int *));
-	size = size - 1;
+	get_stack = ft_calloc(stack_size(stack->stack_a), sizeof(int *));
+	size = stack_size(stack->stack_a) - 1;
 	index = 1;
 	while (index <= size)
 	{
@@ -27,11 +34,9 @@ int * swap_rrb(t_container * stack)
 	int size;
 	int * get_stack;
 
-	size = 0;
-	while(stack->stack_b[size])
-		size++;
-	get_stack = ft_calloc(size, sizeof(int *));
-	size = size - 1;
+	
+	get_stack = ft_calloc(stack_size(stack->stack_a), sizeof(int *));
+	size = stack_size(stack->stack_a) - 1;
 	index = 1;
 	while (index <= size)
 	{
