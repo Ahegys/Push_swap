@@ -32,12 +32,6 @@ t_container * swap_pa(t_container * stack)
 		j++;
 		i++;
 	}
-	i = 0;
-	while (cont_a[i])
-	{
-		ft_printf("a = [%i]", cont_a[i]);
-		i++;
-	}
 	stack->stack_a = cont_a;
 	stack->stack_b = cont_b;
 	return (stack);
@@ -73,12 +67,6 @@ t_container * swap_pb(t_container * stack)
 	{
 		cont_a[j] = stack->stack_a[i];
 		j++;
-		i++;
-	}
-	i = 0;
-	while (cont_b[i])
-	{
-		ft_printf("b = [%i]", cont_b[i]);
 		i++;
 	}
 	stack->stack_a = cont_a;
