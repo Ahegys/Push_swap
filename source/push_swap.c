@@ -8,6 +8,11 @@ int main(int ac, char * av[])
 		return (ft_printf("\n"));
 	stack = *init_stack(&stack, av);
 	stack = *swap_pa(&stack);
+	while(*stack.stack_a)
+	{
+		ft_printf("[%i]", *stack.stack_a);
+		stack.stack_a++;
+	}
 	ft_printf("\nOK\n");
 	return (0);
 }
