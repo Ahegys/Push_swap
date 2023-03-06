@@ -7,12 +7,7 @@ int main(int ac, char * av[])
 	if (ac < 3)
 		return (ft_printf("\n"));
 	stack = *init_stack(&stack, av);
-	stack = *swap_pa(&stack);
-	while(*stack.stack_a)
-	{
-		ft_printf("[%i]", *stack.stack_a);
-		stack.stack_a++;
-	}
+	short_sort(&stack);
 	ft_printf("\nOK\n");
 	return (0);
 }

@@ -1,5 +1,18 @@
 #include "push_swap.h"
+ 
+void	print_stack(int * stack)
+{
+	int i;
 
+	i = 0;
+	ft_printf("stack: ");
+	while(stack[i])
+	{
+		ft_printf("[%i]", stack[i]);
+		i++;
+	}
+	ft_printf("\n");
+}
 int * fill_in(int i)
 {
 	int * fill;

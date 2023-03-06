@@ -15,12 +15,16 @@
 int * fill_in(int i);
 int arg_size(char * arg[]);
 int stack_size(int * stack);
+void	print_stack(int * stack);
+int	validate_stack(int * stack);
 int	* swap_sa(t_container * stack);
 int	* swap_sb(t_container * stack);
 int * swap_ra(t_container * stack);
 int * swap_rb(t_container * stack);
 int * swap_rra(t_container * stack);
 int * swap_rrb(t_container * stack);
+void	sort_two(t_container * stack);
+void	short_sort(t_container * stack);
 t_container * swap_ss(t_container * stack);
 t_container * swap_rr(t_container * stack);
 t_container * swap_pa(t_container * stack);
