@@ -32,11 +32,11 @@ jobs:
           "4 3 1 2"
           "$(seq 1 100 | shuf | tr '\n' ' ')"
         )
-        
+
         # Test each input
         for input in "${inputs[@]}"; do
           output=$(./push_swap $input)
-          
+
           # Check if the output is in the expected format
           if ! echo "$output" | grep -q "^OK .* stack:$"; then
             echo "Output format is not correct for input '$input':"
@@ -44,18 +44,12 @@ jobs:
             echo "Actual output: $output"
             exit 1
           fi
-          
+
           # Check if the output is sorted correctly
-          sorted=
-          if [ "$(echo "$output" | sed 's/^OK //' | tr ' ' '\n' | wc -l)" -eq 1 ]; then
-            sorted="$output stack:"
-          else
-            sorted=$(echo "$output" | sed 's/^OK //; s/ stack:$//' | tr ' ' '\n' | sort -n | tr '\n' ' ')
-            sorted="OK $sorted stack:"
-          fi
-          if [ "$output" != "$sorted" ]; then
+          sorted=$(echo "$output" | sed 's/^OK //; s/ stack:$//' | tr ' ' '\n' | sort -n | tr '\n' ' ')
+          if [ "$output" != "OK $sorted stack:" ]; then
             echo "Output is not sorted correctly for input '$input':"
-            echo "Expected: '$sorted'"
+            echo "Expected: 'OK $sorted stack:'"
             echo "Actual: $output"
             exit 1
           fi
