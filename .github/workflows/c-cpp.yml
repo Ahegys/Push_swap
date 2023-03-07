@@ -19,4 +19,20 @@ jobs:
 
     - name: Test
       run: |
-        ./push_swap 1 2 3 4 5
+        echo "Testing output for 2 3 4 in ascending order"
+        output=$(./push_swap 2 3 4 | ./checker_linux 2 3 4)
+        if [ "$output" != "OK" ]; then
+          echo "Output is not in ascending order: $output"
+          exit 1
+        fi
+        
+        # Test if the output is in ascending order for multiple random inputs
+        echo "Testing output for multiple random inputs"
+        for i in {1..10}; do
+          input=$(shuf -i 1-1000 -n 10 | tr '\n' ' ')
+          output=$(./push_swap $input | ./checker_linux $input)
+          if [ "$output" != "OK" ]; then
+            echo "Output is not in ascending order: $output (for input $input)"
+            exit 1
+          fi
+        done
