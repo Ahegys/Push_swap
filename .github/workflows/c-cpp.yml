@@ -37,11 +37,19 @@ jobs:
         for input in "${inputs[@]}"; do
           output=$(./push_swap $input)
           
+          # Check if the output is in the expected format
+          if ! echo "$output" | grep -q "^OK .* stack:$"; then
+            echo "Output format is not correct for input '$input':"
+            echo "Expected format: 'OK ... stack:'"
+            echo "Actual output: $output"
+            exit 1
+          fi
+          
           # Check if the output is sorted correctly
-          sorted=$(echo "$output" | tr ' ' '\n' | sort -n | tr '\n' ' ')
-          if [ "$output" != "$sorted" ]; then
+          sorted=$(echo "$output" | sed 's/^OK //; s/ stack:$//' | tr ' ' '\n' | sort -n | tr '\n' ' ')
+          if [ "$output" != "OK $sorted stack:" ]; then
             echo "Output is not sorted correctly for input '$input':"
-            echo "Expected: $sorted"
+            echo "Expected: 'OK $sorted stack:'"
             echo "Actual: $output"
             exit 1
           fi
