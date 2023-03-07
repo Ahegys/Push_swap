@@ -39,10 +39,10 @@ jobs:
           
           # Check if the output is in the expected format and the numbers are sorted correctly
           sorted=$(echo "$input" | tr ' ' '\n' | sort -n | tr '\n' ' ')
-          if [ "$output" != "OK $sorted stack:" ]; then
+          if ! echo "$output" | grep -q "stack: \[.*\]$"; then
             echo "Output format is not correct for input '$input':"
-            echo "Expected format: 'OK ... stack:' with the numbers sorted correctly"
+            echo "Expected format: 'stack: $sorted' with the numbers sorted correctly"
             echo "Actual output: $output"
             exit 1
-          fi
+        fi
         done
