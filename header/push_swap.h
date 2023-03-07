@@ -24,6 +24,7 @@ int * swap_rb(t_container * stack);
 int * swap_rra(t_container * stack);
 int * swap_rrb(t_container * stack);
 void	sort_two(t_container * stack);
+void	sort_four(t_container * stack);
 void	sort_three(t_container * stack);
 void	short_sort(t_container * stack);
 t_container * swap_ss(t_container * stack);
