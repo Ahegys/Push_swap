@@ -20,7 +20,7 @@ jobs:
     - name: Test
       run: |
         # Define the test inputs
-         inputs=(
+        inputs=(
           "1 2 3 4"
           " 4 3 2 1"
           "42 0 -42"
@@ -46,10 +46,16 @@ jobs:
           fi
           
           # Check if the output is sorted correctly
-          sorted=$(echo "$output" | sed 's/^OK //; s/ stack:$//' | tr ' ' '\n' | sort -n | tr '\n' ' ')
-          if [ "$output" != "OK $sorted stack:" ]; then
+          sorted=
+          if [ "$(echo "$output" | sed 's/^OK //' | tr ' ' '\n' | wc -l)" -eq 1 ]; then
+            sorted="$output stack:"
+          else
+            sorted=$(echo "$output" | sed 's/^OK //; s/ stack:$//' | tr ' ' '\n' | sort -n | tr '\n' ' ')
+            sorted="OK $sorted stack:"
+          fi
+          if [ "$output" != "$sorted" ]; then
             echo "Output is not sorted correctly for input '$input':"
-            echo "Expected: 'OK $sorted stack:'"
+            echo "Expected: '$sorted'"
             echo "Actual: $output"
             exit 1
           fi
