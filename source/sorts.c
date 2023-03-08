@@ -7,41 +7,34 @@ void	sort_two(t_container * stack)
 		swap_sa(stack);
 		ft_printf("sa\n");
 	}
-	print_stack(stack->stack_a);
+	print_stack(stack->stack_a, stack->size);
 }
 
 void	sort_three(t_container * stack)
 {
-	int i;
-
-	i = 0;
-	while (stack->stack_a[i])
-	{
 		if (stack->stack_a[0] > stack->stack_a[1])
 		{
 			stack->stack_a = swap_sa(stack);
 			ft_printf("sa\n");
 		}
-		else if (stack->stack_a[0] > stack->stack_a[2])
+		if (stack->stack_a[1] < stack->stack_a[0])
+		{
+			stack->stack_a = swap_sa(stack);
+			ft_printf("sa\n");
+		}
+		else if (stack->stack_a[2] < stack->stack_a[1])
 		{
 			stack->stack_a = swap_rra(stack);
 			ft_printf("rra\n");
-		}
-		else if (stack->stack_a[1] > stack->stack_a[2])
-		{
-			stack->stack_a = swap_rra(stack);
-			ft_printf("rra\n");
-		}
-		i++;
 	}
-	print_stack(stack->stack_a);
+	print_stack(stack->stack_a, stack->size);
 }
 
 void	sort_four(t_container * stack)
 {
 	int i;
 
-	i = 5;
+	i = 6;
 	while(i)
 	{
 		if (stack->stack_a[0] > stack->stack_a[1])
@@ -49,7 +42,7 @@ void	sort_four(t_container * stack)
 			stack->stack_a = swap_sa(stack);
 			ft_printf("sa\n");
 		}
-		else if (stack->stack_a[0] > stack->stack_a[3] && stack->stack_a[0] < stack->stack_a[1])
+		if (stack->stack_a[0] > stack->stack_a[3] && stack->stack_a[0] < stack->stack_a[1])
 		{
 			stack->stack_a = swap_rra(stack);
 			ft_printf("rra\n");
@@ -66,5 +59,5 @@ void	sort_four(t_container * stack)
 		}
 		i--;
 	}
-	print_stack(stack->stack_a);
+	print_stack(stack->stack_a, stack->size);
 }

@@ -33,8 +33,4 @@ re:fclean all
 
 $(OBJ): | $(OBJDIR)
 
-ccs:
-	clear
-	@echo "\033[0;107m\033[1;90m ++++++++++++++++++++++++++++++++++++++++++++++++ \033[0m"
-
 .PHONY: all clean fclean

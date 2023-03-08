@@ -5,6 +5,7 @@ typedef struct l_container
 {
 	int	* stack_a;
 	int * stack_b;
+	int size;
 }				t_container;
 
 #endif
