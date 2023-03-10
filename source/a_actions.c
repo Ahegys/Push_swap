@@ -1,4 +1,4 @@
-#include "push_swap.h"
+#include "../header/push_swap.h"
 
 void	sa(t_container * stack)
 {
@@ -11,8 +11,9 @@ void	sa(t_container * stack)
 void	ra(t_container * stack)
 {
 	stack->stack_a[0] ^= stack->stack_a[stack->size - 1];
-	stack->stack_a[stack->size] ^= stack->stack_a[0];
+	stack->stack_a[stack->size - 1] ^= stack->stack_a[0];
 	stack->stack_a[0] ^= stack->stack_a[stack->size - 1];
+	ft_printf("ra\n");
 }
 
 void	rra(t_container * stack)

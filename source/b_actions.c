@@ -11,7 +11,7 @@ void	sb(t_container * stack)
 void	rb(t_container * stack)
 {
 	stack->stack_b[0] ^= stack->stack_b[stack->size - 1];
-	stack->stack_b[stack->size] ^= stack->stack_b[0];
+	stack->stack_b[stack->size - 1] ^= stack->stack_b[0];
 	stack->stack_b[0] ^= stack->stack_b[stack->size - 1];
 }
 
