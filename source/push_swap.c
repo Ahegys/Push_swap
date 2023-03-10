@@ -15,8 +15,9 @@ int main(int ac, char * av[])
 		stack = *push(&stack,av[i]);
 		i++;
 	}
-	short_sort(&stack, ac - 1);
-	print_stack(stack.stack_a, ac - 1);
-	ft_printf("\nOK\n");
+	print_stack(stack.stack_a, stack.size);
+	selection(stack.size, &stack);
+	print_stack(stack.stack_a, stack.size);
+	ft_printf("OK\n");
 	return (0);
 }

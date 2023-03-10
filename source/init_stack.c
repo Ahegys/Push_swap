@@ -8,7 +8,7 @@ void	print_stack(int * stack, int size)
 	ft_printf("stack: ");
 	while(i < size)
 	{
-		ft_printf("[%i]", stack[i]);
+		ft_printf("[%i]", *(stack + i));
 		i++;
 	}
 	ft_printf("\n");
