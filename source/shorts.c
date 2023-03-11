@@ -19,3 +19,11 @@ void three(t_container * stack)
 	else if (stack->stack_a[0] > stack->stack_a[1])
 		ra(stack);
 }
+
+void four(t_container *stack)
+{
+	if (!sorted(stack))
+		ft_printf("not\n");
+	else
+		ft_printf("yes\n");
+}

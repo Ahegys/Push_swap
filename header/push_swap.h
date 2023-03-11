@@ -20,6 +20,8 @@ void	rb(t_container * stack);
 void	rra(t_container * stack);
 void	rrb(t_container * stack);
 void	two(t_container * stack);
+int sorted(t_container *stack);
+void	four(t_container * stack);
 void	three(t_container * stack);
 void	print_stack(int * stack, int size);
 void	selection(int size, t_container * stack);
