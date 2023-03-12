@@ -22,8 +22,5 @@ void three(t_container * stack)
 
 void four(t_container *stack)
 {
-	if (!sorted(stack))
-		ft_printf("not\n");
-	else
-		ft_printf("yes\n");
+	pa(stack);
 }
