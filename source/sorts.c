@@ -20,8 +20,6 @@ void	selection(int size, t_container * stack)
 		two(stack);
 	else if (size == 3)
 			three(stack);
-	else if (size == 4)
-			four(stack);
 	else
-		ft_printf("error in stack!\n");
+		radix_sort(stack);
 }

@@ -18,6 +18,8 @@ int main(int ac, char * av[])
 	stack_size(&stack);
 	selection(stack.size, &stack);
 	print_stack(stack.stack_a, stack.size);
+	free(stack.stack_a);
+	free(stack.stack_b);
 	ft_printf("OK\n");
 	return (0);
 }
