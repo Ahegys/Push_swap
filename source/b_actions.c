@@ -31,22 +31,19 @@ void	rrb(t_container * stack)
 void	pb(t_container * stack)
 {
 	int i;
-	int temp;
-
-	i = 0;
+	
 	stack_size(stack);
-	if (stack->bs < 0)
+	if (stack->as == 0)
 		return;
-	else
-	{
-		temp = stack->stack_a[0];
-		while (i++ <= stack->as)
-			stack->stack_a[i] = stack->stack_a[i + 1];
-		i = 1;
-		while (i++ <= stack->bs)
-			stack->stack_b[i] = stack->stack_b[i - 1];
-		stack->stack_b[0] = temp;
-		stack->bs++;
-		stack->as--;
-	}
+	i = stack->bs;
+	while (i--)
+		stack->stack_b[i + 1] = stack->stack_b[i];
+	stack->stack_b[0] = stack->stack_a[0];
+	i = -1;
+	while (i++ < stack->as)
+		stack->stack_a[i] = stack->stack_a[i + 1];
+	stack->bs++;
+	stack->as--;
+	ft_printf("pb\n");
 }
+

@@ -20,7 +20,28 @@ void three(t_container * stack)
 		ra(stack);
 }
 
-void four(t_container *stack)
+int	find_min_index(int *stack, int size)
 {
-	pa(stack);
+	int	min;
+	int	i;
+	int	index;
+
+	i = 0;
+	min = stack[0];
+	index = 0;
+	while (i < size)
+	{
+		if (stack[i] < min)
+		{
+			min = stack[i];
+			index = i;
+		}
+		i++;
+	}
+	return (index);
+}
+
+void    four(t_container *stack)
+{
+	radix(stack);
 }
